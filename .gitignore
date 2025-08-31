@@ -1,0 +1,44 @@
+# --- General OS/editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.orig
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# --- Rust / Cargo ---
+# Build output
+/target/
+
+# If you generate artifacts in sub-crates too (handled by workspace target above)
+**/target/
+
+# Rustfmt / clippy caches (optional)
+.rustfmt.toml.bk
+
+# --- Wasm / Web (Trunk) ---
+# Trunk build output
+/web/dist/
+
+# wasm-pack (if ever used)
+/pkg/
+
+# wasm-bindgen (usually under target, but be safe)
+**/wasm-bindgen/
+
+# --- Misc ---
+# Local environment files
+.env
+.env.*
+
+# Backup files
+*~
+
+# Node leftovers (if any tooling pulls it in)
+node_modules/

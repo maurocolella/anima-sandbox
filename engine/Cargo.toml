@@ -1,0 +1,39 @@
+[package]
+name = "engine"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "engine"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+bytemuck = { version = "1", features = ["derive"] }
+egui = "0.32"
+egui-winit = { version = "0.32", default-features = false }
+egui-wgpu = { version = "0.32", features = ["winit"] }
+# wgpu 25 aligns with egui-wgpu 0.32.x
+wgpu = { version = "25", features = ["glsl"] }
+winit = { version = "0.30" }
+glam = "0.27"
+log = "0.4"
+
+# Time utilities (smooth on wasm too)
+web-time = "1"
+
+# Native-only helpers
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+pollster = "0.4"
+env_logger = "0.11"
+
+# Web-only helpers
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+console_error_panic_hook = "0.1"
+console_log = { version = "1", features = ["color"] }
+js-sys = "0.3"
+web-sys = { version = "0.3", features = [
+  "Document", "Window", "Element", "HtmlCanvasElement"
+] }

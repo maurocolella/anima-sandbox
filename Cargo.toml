@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "engine",
+    "desktop",
+    "web",
+]
+resolver = "2"

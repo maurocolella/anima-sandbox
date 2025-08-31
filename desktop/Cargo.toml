@@ -1,0 +1,12 @@
+[package]
+name = "desktop"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+engine = { path = "../engine" }
+winit = "0.30"
+log = "0.4"
+pollster = "0.4"
+wgpu = "25"

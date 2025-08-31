@@ -1,0 +1,2 @@
+[build]
+# Default build (lib cdylib); no explicit binary target
