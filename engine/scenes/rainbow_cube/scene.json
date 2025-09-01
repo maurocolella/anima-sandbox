@@ -1,0 +1,6 @@
+{
+  "name": "Rainbow Cube",
+  "geometry": "cube",
+  "shader": "shader.wgsl",
+  "rotation_speed": 1.0
+}
